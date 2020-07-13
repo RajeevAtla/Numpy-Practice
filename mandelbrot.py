@@ -1,6 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
-def mandelbrot( h,w, maxit=20 ):
+def mandelbrot( h,w, maxit = 50 ):
     y,x = np.ogrid[ -1.4:1.4:h*1j, -2:0.8:w*1j ]
     c = x+y*1j
     z = c
@@ -9,7 +9,7 @@ def mandelbrot( h,w, maxit=20 ):
     for i in range(maxit):
         z = z**2 + c
         diverge = z*np.conj(z) > 2**2
-        div_now = diverge & (divtime==maxit)
+        div_now = diverge & (divtime == maxit)
         divtime[div_now] = i
         z[diverge] = 2
 
